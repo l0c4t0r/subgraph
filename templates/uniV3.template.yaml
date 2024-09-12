@@ -111,48 +111,6 @@ dataSources:
           handler: handleTransfer
       file: ./src/mappings/visorFactory.ts
   {{/VisorFactory}}
-  {{#liquidityMining}}
-  - kind: ethereum/contract
-    name: {{name}}
-    network: "{{network}}"
-    source:
-      address: "{{address}}"
-      abi: Hypervisor
-      startBlock: {{startBlock}}
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.7
-      language: wasm/assemblyscript
-      entities:
-        - Hypervisor
-        - StakedToken
-        - RewardToken
-      abis:
-        - name: Hypervisor
-          file: ./abis/Hypervisor.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-      eventHandlers:
-        - event: BonusTokenRegistered(address)
-          handler: handleBonusTokenRegistered
-        - event: HypervisorCreated(address,address)
-          handler: handleHypervisorCreated
-        - event: HypervisorFunded(uint256,uint256)
-          handler: handleHypervisorFunded
-        - event: OwnershipTransferred(indexed address,indexed address)
-          handler: handleOwnershipTransferred
-        - event: RewardClaimed(address,address,address,uint256)
-          handler: handleRewardClaimed
-        - event: Staked(address,uint256)
-          handler: handleStaked
-        - event: Unstaked(address,uint256)
-          handler: handleUnstaked
-        - event: VaultFactoryRegistered(address)
-          handler: handleVaultFactoryRegistered
-        - event: VaultFactoryRemoved(address)
-          handler: handleVaultFactoryRemoved
-      file: ./src/mappings/hypervisor.ts
-  {{/liquidityMining}}
   {{#uniswapV3HypervisorFactory}}
   - kind: ethereum/contract
     name: {{name}}

@@ -75,19 +75,6 @@ type Factory @entity {
   owner: Bytes!
 }
 
-type Hypervisor @entity {
-  id: ID!
-  owner: Bytes!
-  stakingToken: Token!
-  totalStakedAmount: BigInt
-  rewardToken: Token!
-  rewardPool: Bytes
-  rewardPoolAmount: BigInt
-  powerSwitch: Bytes
-  bonusTokens: [Bytes!]
-  vaultFactory: Factory
-}
-
 "Each account is an address, this can either be an normal wallet or a visor vault"
 type Account @entity {
   id: ID!
@@ -115,20 +102,6 @@ type User @entity {
   id: ID!
   activeAccount: Account!
   accountsOwned: [Account!] @derivedFrom(field: "parent") # Visors owned by this user
-}
-
-type StakedToken @entity {
-  id: ID! # Vault address-Token address
-  token: Token!
-  account: Account!
-  amount: BigInt!
-}
-
-type RewardedToken @entity {
-  id: ID! # Vault address-Token address
-  token: Token!
-  account: Account!
-  amount: BigInt!
 }
 
 type Token @entity {
@@ -466,7 +439,7 @@ type MasterChefV2RewarderPoolAccount @entity {
 
 type HypervisorStaking @entity(immutable: true) {
   id: Bytes!
-  hypervisor: Hypervisor!
+  hypervisor: UniswapV3Hypervisor!
 }
 
 type _PoolQueue @entity {

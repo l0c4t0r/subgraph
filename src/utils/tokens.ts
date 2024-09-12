@@ -142,43 +142,6 @@ export function getOrCreateEthToken(): Token {
   return token as Token;
 }
 
-export function getOrCreateStakedToken(
-  vaultAddress: Address,
-  tokenAddress: Address
-): StakedToken {
-  let token = getOrCreateToken(tokenAddress);
-  token.save();
-
-  let stakedTokenId =
-    vaultAddress.toHexString() + "-" + tokenAddress.toHexString();
-  let stakedToken = StakedToken.load(stakedTokenId);
-  if (stakedToken == null) {
-    stakedToken = new StakedToken(stakedTokenId);
-    stakedToken.token = tokenAddress.toHexString();
-    stakedToken.account = vaultAddress.toHexString();
-    stakedToken.amount = ZERO_BI;
-  }
-
-  return stakedToken as StakedToken;
-}
-
-export function createRewardedToken(
-  vaultAddress: Address,
-  tokenAddress: Address
-): RewardedToken {
-  let token = getOrCreateToken(tokenAddress);
-  token.save();
-
-  let rewardedTokenId =
-    vaultAddress.toHexString() + "-" + tokenAddress.toHexString();
-  let rewardedToken = new RewardedToken(rewardedTokenId);
-  rewardedToken.token = tokenAddress.toHexString();
-  rewardedToken.account = vaultAddress.toHexString();
-  rewardedToken.amount = ZERO_BI;
-
-  return rewardedToken as RewardedToken;
-}
-
 function isToken(tokenAddress: Address, refAddress: Address): boolean {
   if (tokenAddress == refAddress) {
     return true;
