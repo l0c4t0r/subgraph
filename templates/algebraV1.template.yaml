@@ -15,7 +15,7 @@ dataSources:
   {{#hypervisorOrphan}}
   - name: {{name}}
     kind: ethereum/contract
-    network: {{network}}
+    network: "{{network}}"
     source:
       address: "{{address}}"
       abi: AlgebraHypervisor
@@ -72,7 +72,7 @@ dataSources:
   {{#poolOrphan}}
   - name: {{name}}
     kind: ethereum/contract
-    network: {{network}}
+    network: "{{network}}"
     source:
       address: "{{address}}"
       abi: Pool
@@ -111,7 +111,7 @@ dataSources:
   {{#hypeRegistry}}
   - name: {{name}}
     kind: ethereum/contract
-    network: {{network}}
+    network: "{{network}}"
     source:
       address: "{{address}}"
       abi: HypeRegistry
@@ -158,7 +158,7 @@ dataSources:
   {{#feeDistributor}}
   - kind: ethereum/contract
     name: {{name}}
-    network: {{network}}
+    network: "{{network}}"
     source:
       address: "{{address}}"
       abi: FeeDistributor
@@ -195,7 +195,7 @@ dataSources:
   {{#swapContract}}
   - kind: ethereum/contract
     name: {{name}}
-    network: {{network}}
+    network: "{{network}}"
     source:
       address: "{{address}}"
       abi: SwapContract
@@ -228,7 +228,7 @@ dataSources:
   {{#uniProxy}}
   - kind: ethereum/contract
     name: {{name}}
-    network: {{network}}
+    network: "{{network}}"
     source:
       address: "{{address}}"
       abi: UniProxy
@@ -279,7 +279,7 @@ dataSources:
   {{#masterChefRegistry}}
   - name: {{name}}
     kind: ethereum/contract
-    network: {{network}}
+    network: "{{network}}"
     source:
       address: "{{address}}"
       abi: HypeRegistry
@@ -311,7 +311,7 @@ dataSources:
   {{#masterChefV2Registry}}
   - name: {{name}}
     kind: ethereum/contract
-    network: {{network}}
+    network: "{{network}}"
     source:
       address: "{{address}}"
       abi: HypeRegistry
@@ -343,7 +343,7 @@ dataSources:
   {{#rewardsRegistry}}
   - name: {{name}}
     kind: ethereum/contract
-    network: {{network}}
+    network: "{{network}}"
     source:
       address: "{{address}}"
       abi: RewardsRegistry
@@ -373,7 +373,7 @@ dataSources:
   {{#masterChefOrphan}}
   - kind: ethereum/contract
     name: {{name}}
-    network: {{network}}
+    network: "{{network}}"
     source:
       address: "{{address}}"
       abi: MasterChef
@@ -429,7 +429,7 @@ dataSources:
   {{#hypeStaking}}
   - kind: ethereum/contract
     name: {{name}}
-    network: {{network}}
+    network: "{{network}}"
     source:
       address: "{{address}}"
       abi: LineaVoterV5
@@ -451,7 +451,7 @@ dataSources:
 templates:
   - name: Hypervisor
     kind: ethereum/contract
-    network: {{network}}
+    network: "{{network}}"
     source:
       abi: AlgebraHypervisor
     mapping:
@@ -498,7 +498,7 @@ templates:
           handler: handleSetFee
   - name: Pool
     kind: ethereum/contract
-    network: {{network}}
+    network: "{{network}}"
     source:
       abi: Pool
     mapping:
@@ -533,7 +533,7 @@ templates:
           handler: handleSwap
   - name: AlternatePool
     kind: ethereum/contract
-    network: {{network}}
+    network: "{{network}}"
     source:
       abi: Pool
     mapping:
@@ -568,7 +568,7 @@ templates:
           handler: handleSwap
   - name: Token
     kind: ethereum/contract
-    network: {{network}}
+    network: "{{network}}"
     source:
       abi: ERC20
     mapping:
@@ -587,7 +587,7 @@ templates:
   {{#masterChefTemplate}}
   - kind: ethereum/contract
     name: MasterChef
-    network: {{network}}
+    network: "{{network}}"
     source:
       abi: MasterChef
     mapping:
@@ -643,7 +643,7 @@ templates:
   {{#masterChefV2Template}}
   - kind: ethereum/contract
     name: MasterChefV2
-    network: {{network}}
+    network: "{{network}}"
     source:
       abi: MasterChefV2
     mapping:
@@ -704,7 +704,7 @@ templates:
           handler: handleLogRewarderAdded
   - kind: ethereum/contract
     name: Rewarder
-    network: {{network}}
+    network: "{{network}}"
     source:
       abi: MasterChefV2Rewarder
     mapping:

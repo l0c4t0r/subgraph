@@ -67,6 +67,10 @@ program
       exec(
         `goldsky subgraph deploy ${config.deploymentName}/${version} --path .`
       ).stdout.pipe(process.stdout);
+    } else if (config.deploymentService == "core") {
+      exec(
+        `node_modules/.bin/graph deploy ${config.deploymentName} --version-label ${version} --node https://thegraph.coredao.org/deploy/ --ipfs https://thegraph.coredao.org/ipfs/`
+      ).stdout.pipe(process.stdout);
     } else {
       exec(
         `node_modules/.bin/graph deploy --studio ${config.deploymentName} --version-label ${version}`

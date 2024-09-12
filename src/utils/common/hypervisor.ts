@@ -340,7 +340,7 @@ export function processTransfer(
       return;
     } else if (fromGauge) {
       //Transfering from gauge back
-      toShare.sharesStaked = fromShare.sharesStaked.minus(value);
+      toShare.sharesStaked = toShare.sharesStaked.minus(value);
       toShare.save();
       return;
     }

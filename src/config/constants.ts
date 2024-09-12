@@ -256,6 +256,20 @@ export class constantAddresses {
     return lookup as TypedMap<string, string>;
   }
 
+  static zircuit(): TypedMap<string, string> {
+    let lookup = new TypedMap<string, string>();
+    lookup.set("USDC", "0x0000000000000000000000000000000000000000");  // Not on zircuit yet
+
+    return lookup as TypedMap<string, string>;
+  }
+
+  static core(): TypedMap<string, string> {
+    let lookup = new TypedMap<string, string>();
+    lookup.set("USDC", "0xa4151b2b3e269645181dccf2d426ce75fcbdeca9");
+
+    return lookup as TypedMap<string, string>;
+  }
+
   static network(network: string): TypedMap<string, string> {
     let mapping = new TypedMap<string, string>();
     if (network == "mainnet") {
@@ -316,6 +330,10 @@ export class constantAddresses {
       mapping = this.sei();
     } else if (network == "iota") {
       mapping = this.iota();
+    } else if (network == "48900") {
+      mapping = this.zircuit();
+    } else if (network == "core") {
+      mapping = this.core();
     }
 
     return mapping as TypedMap<string, string>;

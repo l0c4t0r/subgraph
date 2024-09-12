@@ -1,0 +1,13 @@
+{
+  "network": "48900",
+  "subgraphTemplate": "algebraIntegral",
+  "deploymentService": "sentio",
+  "deploymentName": "gamma-circuit-zircuit",
+  "hypeRegistry": [
+    {
+      "name": "HypeRegistry",
+      "address": "0x683292172E2175bd08e3927a5e72FC301b161300",
+      "startBlock": 1216165
+    }
+  ]
+}
