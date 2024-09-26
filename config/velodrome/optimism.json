@@ -1,0 +1,16 @@
+{
+  "network": "optimism",
+  "subgraphTemplate": "common",
+  "hypeAbiName": "UniswapV3Hypervisor",
+  "poolAbiName": "VelodromePool",
+  "poolHandler": "uniswapV3",
+  "deploymentService": "studio",
+  "deploymentName": "gamma-velodrome-optimism",
+  "hypeRegistry": [
+    {
+      "name": "HypeRegistry",
+      "address": "0xF802D5c44dC4E3bB0eCcf680a6bA82Cbd24B9F33",
+      "startBlock": 125319599
+    }
+  ]
+}

@@ -9,6 +9,3 @@ export function handleSwap(event: Swap): void {
         event.block
     )
 }
-
-// export function handleCollect(event: Collect): void {
-// }

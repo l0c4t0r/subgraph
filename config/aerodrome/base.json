@@ -1,0 +1,16 @@
+{
+  "network": "base",
+  "subgraphTemplate": "common",
+  "hypeAbiName": "UniswapV3Hypervisor",
+  "poolAbiName": "VelodromePool",
+  "poolHandler": "uniswapV3",
+  "deploymentService": "studio",
+  "deploymentName": "gamma-aerodrome-base",
+  "hypeRegistry": [
+    {
+      "name": "HypeRegistry",
+      "address": "0x6809f4881707459Ad0287C6467365E3C910e9373",
+      "startBlock": 19631061
+    }
+  ]
+}

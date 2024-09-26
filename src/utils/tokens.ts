@@ -8,8 +8,6 @@ import { BaseTokenDefinition } from "../config/baseTokenDefinition";
 import { getOrCreateHypervisor } from "./uniswapV3/hypervisor";
 import {
   Token,
-  StakedToken,
-  RewardedToken,
   UniswapV3HypervisorConversion,
 } from "../../generated/schema";
 import { Token as TokenTemplate } from "../../generated/templates";

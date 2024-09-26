@@ -1,0 +1,14 @@
+- name: Pool
+  file: ./abis/{{poolAbiName}}.json
+- name: AlgebraV1Pool
+  file: ./abis/AlgebraFinance/V1Pool.json
+- name: AlgebraV2Pool
+  file: ./abis/AlgebraFinance/V2Pool.json
+- name: AlgebraIntegralPool
+  file: ./abis/AlgebraFinance/IntegralPool.json
+- name: UniswapV3Pool
+  file: ./abis/UniswapV3Pool.json
+- name: FusionxPool
+  file: ./abis/FusionxPool.json
+- name: VelodromePool
+  file: ./abis/VelodromePool.json

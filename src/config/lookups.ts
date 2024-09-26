@@ -272,3 +272,11 @@ protocolLookup.set("core:0xfc13ebe7feb9595d70195e9168aa7f3ace153621", {
   name: "corex",
   underlyingProtocol: PROTOCOL_UNISWAP_V3,
 });
+protocolLookup.set("optimism:0xf802d5c44dc4e3bb0eccf680a6ba82cbd24b9f33", {
+  name: "velodrome",
+  underlyingProtocol: PROTOCOL_UNISWAP_V3,
+});
+protocolLookup.set("base:0x6809f4881707459ad0287c6467365e3c910e9373", {
+  name: "aerodrome",
+  underlyingProtocol: PROTOCOL_UNISWAP_V3,
+});
