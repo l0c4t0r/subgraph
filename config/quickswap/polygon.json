@@ -1,7 +1,7 @@
 {
   "network": "matic",
   "subgraphTemplate": "algebraV1",
-  "hypervisorOrphan": [
+  "uniswapV3HypervisorOrphan": [
     {
       "name": "aUSDC-ETH",
       "address": "0x5cA313118358E3F5EFe0c49F239B66C964F9AEf0",

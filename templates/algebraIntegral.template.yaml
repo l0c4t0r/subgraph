@@ -12,7 +12,7 @@ graft:
 schema:
   file: ./schema.graphql
 dataSources:
-  {{#hypervisorOrphan}}
+  {{#uniswapV3HypervisorOrphan}}
   - name: {{name}}
     kind: ethereum/contract
     network: "{{network}}"
@@ -35,26 +35,9 @@ dataSources:
       abis:
         - name: Hypervisor
           file: ./abis/AlgebraFinance/Hypervisor.json
-        - name: Pool
-          file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: AlgebraHypervisor
-          file: ./abis/AlgebraFinance/Hypervisor.json
-        - name: AlgebraV1Pool
-          file: ./abis/AlgebraFinance/V1Pool.json
-        - name: AlgebraV2Pool
-          file: ./abis/AlgebraFinance/V2Pool.json
-        - name: AlgebraIntegralPool
-          file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: UniswapV3Hypervisor
-          file: ./abis/UniswapV3Hypervisor.json
-        - name: UniswapV3Pool
-          file: ./abis/UniswapV3Pool.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-        - name: ERC20NameBytes
-          file: ./abis/ERC20NameBytes.json
-        - name: ERC20SymbolBytes
-          file: ./abis/ERC20SymbolBytes.json
+        {{> hypervisors.yaml}}
+        {{> pools.yaml}}
+        {{> erc20.yaml}}
       eventHandlers:
         - event: Deposit(indexed address,indexed address,uint256,uint256,uint256)
           handler: handleDeposit
@@ -68,8 +51,8 @@ dataSources:
           handler: handleZeroBurn
         - event: SetFee(uint8)
           handler: handleSetFee
-  {{/hypervisorOrphan}}
-  {{#poolOrphan}}
+  {{/uniswapV3HypervisorOrphan}}
+  {{#uniswapV3PoolOrphan}}
   - name: {{name}}
     kind: ethereum/contract
     network: "{{network}}"
@@ -92,22 +75,12 @@ dataSources:
           file: ./abis/AlgebraFinance/Hypervisor.json
         - name: Pool
           file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: AlgebraHypervisor
-          file: ./abis/AlgebraFinance/Hypervisor.json
-        - name: AlgebraV1Pool
-          file: ./abis/AlgebraFinance/V1Pool.json
-        - name: AlgebraV2Pool
-          file: ./abis/AlgebraFinance/V2Pool.json
-        - name: AlgebraIntegralPool
-          file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: UniswapV3Hypervisor
-          file: ./abis/UniswapV3Hypervisor.json
-        - name: UniswapV3Pool
-          file: ./abis/UniswapV3Pool.json
+        {{> hypervisors.yaml}}
+        {{> pools.yaml}}
       eventHandlers:
         - event: Swap(indexed address,indexed address,int256,int256,uint160,uint128,int24)
           handler: handleSwap
-  {{/poolOrphan}}
+  {{/uniswapV3PoolOrphan}}
   {{#hypeRegistry}}
   - name: {{name}}
     kind: ethereum/contract
@@ -127,28 +100,13 @@ dataSources:
       abis:
         - name: HypeRegistry
           file: ./abis/HypeRegistry.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-        - name: ERC20NameBytes
-          file: ./abis/ERC20NameBytes.json
-        - name: ERC20SymbolBytes
-          file: ./abis/ERC20SymbolBytes.json
         - name: Hypervisor
           file: ./abis/AlgebraFinance/Hypervisor.json
         - name: Pool
           file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: AlgebraHypervisor
-          file: ./abis/AlgebraFinance/Hypervisor.json
-        - name: AlgebraV1Pool
-          file: ./abis/AlgebraFinance/V1Pool.json
-        - name: AlgebraV2Pool
-          file: ./abis/AlgebraFinance/V2Pool.json
-        - name: AlgebraIntegralPool
-          file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: UniswapV3Hypervisor
-          file: ./abis/UniswapV3Hypervisor.json
-        - name: UniswapV3Pool
-          file: ./abis/UniswapV3Pool.json
+        {{> hypervisors.yaml}}
+        {{> pools.yaml}}
+        {{> erc20.yaml}}
       eventHandlers:
         - event: HypeAdded(address,uint256)
           handler: handleHypeAdded
@@ -298,12 +256,7 @@ dataSources:
           file: ./abis/MasterChef.json 
         - name: MasterChefV2
           file: ./abis/MasterChefV2.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-        - name: ERC20NameBytes
-          file: ./abis/ERC20NameBytes.json
-        - name: ERC20SymbolBytes
-          file: ./abis/ERC20SymbolBytes.json
+        {{> erc20.yaml}}
       eventHandlers:
         - event: HypeAdded(address,uint256)
           handler: handleHypeAdded
@@ -330,12 +283,7 @@ dataSources:
           file: ./abis/MasterChef.json 
         - name: MasterChefV2
           file: ./abis/MasterChefV2.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-        - name: ERC20NameBytes
-          file: ./abis/ERC20NameBytes.json
-        - name: ERC20SymbolBytes
-          file: ./abis/ERC20SymbolBytes.json
+        {{> erc20.yaml}}
       eventHandlers:
         - event: HypeAdded(address,uint256)
           handler: handleHypeAddedV2
@@ -360,12 +308,7 @@ dataSources:
           file: ./abis/RewardsRegistry.json
         - name: MasterChef
           file: ./abis/MasterChef.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-        - name: ERC20NameBytes
-          file: ./abis/ERC20NameBytes.json
-        - name: ERC20SymbolBytes
-          file: ./abis/ERC20SymbolBytes.json
+        {{> erc20.yaml}}
       eventHandlers:
         - event: RewardsAdded(address,uint256)
           handler: handleRewardsAdded
@@ -394,24 +337,9 @@ dataSources:
           file: ./abis/AlgebraFinance/Hypervisor.json
         - name: Pool
           file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: AlgebraHypervisor
-          file: ./abis/AlgebraFinance/Hypervisor.json
-        - name: AlgebraV1Pool
-          file: ./abis/AlgebraFinance/V1Pool.json
-        - name: AlgebraV2Pool
-          file: ./abis/AlgebraFinance/V2Pool.json
-        - name: AlgebraIntegralPool
-          file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: UniswapV3Hypervisor
-          file: ./abis/UniswapV3Hypervisor.json
-        - name: UniswapV3Pool
-          file: ./abis/UniswapV3Pool.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-        - name: ERC20NameBytes
-          file: ./abis/ERC20NameBytes.json
-        - name: ERC20SymbolBytes
-          file: ./abis/ERC20SymbolBytes.json
+        {{> hypervisors.yaml}}
+        {{> pools.yaml}}
+        {{> erc20.yaml}}
       eventHandlers:
         - event: Deposit(indexed address,indexed uint256,uint256)
           handler: handleDeposit
@@ -449,18 +377,8 @@ templates:
           file: ./abis/AlgebraFinance/Hypervisor.json
         - name: Pool
           file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: AlgebraHypervisor
-          file: ./abis/AlgebraFinance/Hypervisor.json
-        - name: AlgebraV1Pool
-          file: ./abis/AlgebraFinance/V1Pool.json
-        - name: AlgebraV2Pool
-          file: ./abis/AlgebraFinance/V2Pool.json
-        - name: AlgebraIntegralPool
-          file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: UniswapV3Hypervisor
-          file: ./abis/UniswapV3Hypervisor.json
-        - name: UniswapV3Pool
-          file: ./abis/UniswapV3Pool.json
+        {{> hypervisors.yaml}}
+        {{> pools.yaml}}
       eventHandlers:
         - event: Deposit(indexed address,indexed address,uint256,uint256,uint256)
           handler: handleDeposit
@@ -492,20 +410,8 @@ templates:
           file: ./abis/AlgebraFinance/Hypervisor.json
         - name: Pool
           file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: AlgebraHypervisor
-          file: ./abis/AlgebraFinance/Hypervisor.json
-        - name: AlgebraV1Pool
-          file: ./abis/AlgebraFinance/V1Pool.json
-        - name: AlgebraV2Pool
-          file: ./abis/AlgebraFinance/V2Pool.json
-        - name: AlgebraIntegralPool
-          file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: UniswapV3Hypervisor
-          file: ./abis/UniswapV3Hypervisor.json
-        - name: UniswapV3Pool
-          file: ./abis/UniswapV3Pool.json
-        - name: FusionxPool
-          file: ./abis/UniswapV3Pool.json
+        {{> hypervisors.yaml}}
+        {{> pools.yaml}}
       eventHandlers:
         - event: Swap(indexed address,indexed address,int256,int256,uint160,uint128,int24)
           handler: handleSwap
@@ -527,20 +433,8 @@ templates:
           file: ./abis/AlgebraFinance/Hypervisor.json
         - name: Pool
           file: ./abis/FusionxPool.json
-        - name: AlgebraHypervisor
-          file: ./abis/AlgebraFinance/Hypervisor.json
-        - name: AlgebraV1Pool
-          file: ./abis/AlgebraFinance/V1Pool.json
-        - name: AlgebraV2Pool
-          file: ./abis/AlgebraFinance/V2Pool.json
-        - name: AlgebraIntegralPool
-          file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: UniswapV3Hypervisor
-          file: ./abis/UniswapV3Hypervisor.json
-        - name: UniswapV3Pool
-          file: ./abis/UniswapV3Pool.json
-        - name: FusionxPool
-          file: ./abis/UniswapV3Pool.json
+        {{> hypervisors.yaml}}
+        {{> pools.yaml}}
       eventHandlers:
         - event: Swap(indexed address,indexed address,int256,int256,uint160,uint128,int24,uint128,uint128)
           handler: handleSwap
@@ -586,24 +480,9 @@ templates:
           file: ./abis/AlgebraFinance/Hypervisor.json
         - name: Pool
           file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: AlgebraHypervisor
-          file: ./abis/AlgebraFinance/Hypervisor.json
-        - name: AlgebraV1Pool
-          file: ./abis/AlgebraFinance/V1Pool.json
-        - name: AlgebraV2Pool
-          file: ./abis/AlgebraFinance/V2Pool.json
-        - name: AlgebraIntegralPool
-          file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: UniswapV3Hypervisor
-          file: ./abis/UniswapV3Hypervisor.json
-        - name: UniswapV3Pool
-          file: ./abis/UniswapV3Pool.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-        - name: ERC20NameBytes
-          file: ./abis/ERC20NameBytes.json
-        - name: ERC20SymbolBytes
-          file: ./abis/ERC20SymbolBytes.json
+        {{> hypervisors.yaml}}
+        {{> pools.yaml}}
+        {{> erc20.yaml}}
       eventHandlers:
         - event: Deposit(indexed address,indexed uint256,uint256)
           handler: handleDeposit
@@ -645,24 +524,9 @@ templates:
           file: ./abis/AlgebraFinance/Hypervisor.json
         - name: Pool
           file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: AlgebraHypervisor
-          file: ./abis/AlgebraFinance/Hypervisor.json
-        - name: AlgebraV1Pool
-          file: ./abis/AlgebraFinance/V1Pool.json
-        - name: AlgebraV2Pool
-          file: ./abis/AlgebraFinance/V2Pool.json
-        - name: AlgebraIntegralPool
-          file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: UniswapV3Hypervisor
-          file: ./abis/UniswapV3Hypervisor.json
-        - name: UniswapV3Pool
-          file: ./abis/UniswapV3Pool.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-        - name: ERC20NameBytes
-          file: ./abis/ERC20NameBytes.json
-        - name: ERC20SymbolBytes
-          file: ./abis/ERC20SymbolBytes.json
+        {{> hypervisors.yaml}}
+        {{> pools.yaml}}
+        {{> erc20.yaml}}
       eventHandlers:
         - event: Deposit(indexed address,indexed uint256,uint256,indexed address)
           handler: handleDeposit
@@ -706,24 +570,9 @@ templates:
           file: ./abis/AlgebraFinance/Hypervisor.json
         - name: Pool
           file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: AlgebraHypervisor
-          file: ./abis/AlgebraFinance/Hypervisor.json
-        - name: AlgebraV1Pool
-          file: ./abis/AlgebraFinance/V1Pool.json
-        - name: AlgebraV2Pool
-          file: ./abis/AlgebraFinance/V2Pool.json
-        - name: AlgebraIntegralPool
-          file: ./abis/AlgebraFinance/IntegralPool.json
-        - name: UniswapV3Hypervisor
-          file: ./abis/UniswapV3Hypervisor.json
-        - name: UniswapV3Pool
-          file: ./abis/UniswapV3Pool.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-        - name: ERC20NameBytes
-          file: ./abis/ERC20NameBytes.json
-        - name: ERC20SymbolBytes
-          file: ./abis/ERC20SymbolBytes.json
+        {{> hypervisors.yaml}}
+        {{> pools.yaml}}
+        {{> erc20.yaml}}
       eventHandlers:
         - event: LogPoolAddition(indexed uint256,uint256)
           handler: handleLogPoolAddition

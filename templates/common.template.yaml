@@ -328,7 +328,6 @@ templates:
           file: ./abis/FusionxPool.json
         {{> hypervisors.yaml}}
         {{> pools.yaml}}
-        {{> erc20.yaml}}
       eventHandlers:
         - event: Swap(indexed address,indexed address,int256,int256,uint160,uint128,int24,uint128,uint128)
           handler: handleSwap

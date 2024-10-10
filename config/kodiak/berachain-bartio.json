@@ -1,0 +1,17 @@
+{
+    "network": "berachain-bartio",
+    "subgraphTemplate": "common",
+    "hypeAbiName": "UniswapV3Hypervisor",
+    "poolAbiName": "UniswapV3Pool",
+    "poolHandler": "uniswapV3",
+    "deploymentService": "goldsky",
+    "deploymentName": "gamma-kodiak-bartio",
+    "hypeRegistry": [
+      {
+        "name": "HypeRegistry",
+        "address": "0xCFD4A6A885C4404a2A5720918a9B4880600876A8",
+        "startBlock": 5169147
+      }
+    ]
+  }
+  

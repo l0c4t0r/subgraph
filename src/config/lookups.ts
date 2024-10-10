@@ -280,3 +280,11 @@ protocolLookup.set("base:0x6809f4881707459ad0287c6467365e3c910e9373", {
   name: "aerodrome",
   underlyingProtocol: PROTOCOL_UNISWAP_V3,
 });
+protocolLookup.set("gnosis:0xc0766ff871c6c8e72c110100d0120829dc017d38", {
+  name: "uniswap",
+  underlyingProtocol: PROTOCOL_UNISWAP_V3,
+});
+protocolLookup.set("berachain-bartio:0xcfd4a6a885c4404a2a5720918a9b4880600876a8", {
+  name: "kodiak",
+  underlyingProtocol: PROTOCOL_UNISWAP_V3,
+});
