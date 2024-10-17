@@ -1,0 +1,17 @@
+{
+    "network": "optimism",
+    "subgraphTemplate": "common",
+    "hypeAbiName": "UniswapV3Hypervisor",
+    "poolAbiName": "UniswapV3Pool",
+    "poolHandler": "uniswapV3",
+    "deploymentService": "studio",
+    "deploymentName": "gamma-sushi-optimism",
+    "hypeRegistry": [
+      {
+        "name": "HypeRegistry",
+        "address": "0x617BA5fcB4e74758795DceBecA420116e50bD289",
+        "startBlock": 126667774
+      }
+    ]
+  }
+  

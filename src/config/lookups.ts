@@ -288,3 +288,7 @@ protocolLookup.set("berachain-bartio:0xcfd4a6a885c4404a2a5720918a9b4880600876a8"
   name: "kodiak",
   underlyingProtocol: PROTOCOL_UNISWAP_V3,
 });
+protocolLookup.set("optimism:0x617ba5fcb4e74758795dcebeca420116e50bd289", {
+  name: "sushi",
+  underlyingProtocol: PROTOCOL_UNISWAP_V3,
+});
