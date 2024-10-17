@@ -292,3 +292,7 @@ protocolLookup.set("optimism:0x617ba5fcb4e74758795dcebeca420116e50bd289", {
   name: "sushi",
   underlyingProtocol: PROTOCOL_UNISWAP_V3,
 });
+protocolLookup.set("worldchain:0xc27ddd78fc49875fe6f844b72bbf31dfbb099881", {
+  name: "uniswap",
+  underlyingProtocol: PROTOCOL_UNISWAP_V3,
+});

@@ -278,6 +278,13 @@ export class constantAddresses {
     return lookup as TypedMap<string, string>;
   }
 
+  static worldchain(): TypedMap<string, string> {
+    let lookup = new TypedMap<string, string>();
+    lookup.set("USDC", "0x79a02482a880bce3f13e09da970dc34db4cd24d1");
+
+    return lookup as TypedMap<string, string>;
+  }
+
   static network(network: string): TypedMap<string, string> {
     let mapping = new TypedMap<string, string>();
     if (network == "mainnet") {
@@ -344,6 +351,8 @@ export class constantAddresses {
       mapping = this.core();
     } else if (network == "berachain-bartio") {
       mapping = this.bartio();
+    } else if (network == "worldchain") {
+      mapping = this.worldchain();
     }
 
     return mapping as TypedMap<string, string>;

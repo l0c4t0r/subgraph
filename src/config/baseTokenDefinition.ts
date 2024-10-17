@@ -1472,6 +1472,20 @@ export class BaseTokenDefinition {
     return lookup as TypedMap<string, BasePool>;
   }
 
+  static worldchain(): TypedMap<string, BasePool> {
+    const USDC = "0x79a02482a880bce3f13e09da970dc34db4cd24d1";
+
+    let lookup = new TypedMap<string, BasePool>();
+    lookup.set(USDC, {
+      pathIdx: [-1],
+      path: [ADDRESS_ZERO],
+      pathStartBlock: [0],
+      priority: 1,
+    });
+
+    return lookup as TypedMap<string, BasePool>;
+  }
+
   static nonBase(): BasePool {
     let lookup: BasePool = {
       path: [ADDRESS_ZERO],
@@ -1548,6 +1562,8 @@ export class BaseTokenDefinition {
       mapping = this.core();
     } else if (network == "berachain-bartio") {
       mapping = this.bartio();
+    } else if (network == "worldchain") {
+      mapping = this.worldchain();
     }
 
     return mapping as TypedMap<string, BasePool>;

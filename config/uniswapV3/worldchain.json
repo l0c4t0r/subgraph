@@ -1,0 +1,16 @@
+{
+  "network": "worldchain",
+  "subgraphTemplate": "common",
+  "hypeAbiName": "UniswapV3Hypervisor",
+  "poolAbiName": "UniswapV3Pool",
+  "poolHandler": "uniswapV3",
+  "deploymentService": "goldsky",
+  "deploymentName": "gamma-uniswap-worldchain",
+  "hypeRegistry": [
+    {
+      "name": "HypeRegistry",
+      "address": "0xC27DDd78FC49875Fe6F844B72bbf31DFBB099881",
+      "startBlock": 4799965
+    }
+  ]
+}
