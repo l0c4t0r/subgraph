@@ -1,5 +1,5 @@
 import { Address, ByteArray, Bytes, crypto } from "@graphprotocol/graph-ts";
-import { Pool as PoolContract } from "../../../generated/templates/Pool/Pool";
+import { UniswapV3Pool as PoolContract } from "../../../generated/templates/Pool/UniswapV3Pool";
 import { UniswapV3Pool } from "../../../generated/schema";
 import { createPool } from "../entities";
 import { encodeKey } from "../common/positions";

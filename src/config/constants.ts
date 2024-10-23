@@ -285,6 +285,14 @@ export class constantAddresses {
     return lookup as TypedMap<string, string>;
   }
 
+  static apechain(): TypedMap<string, string> {
+    let lookup = new TypedMap<string, string>();
+    lookup.set("USDC", "0x0000000000000000000000000000000000000000");
+    lookup.set("APE_USD", "0xa2235d059f80e176d931ef76b6c51953eb3fbef4")
+
+    return lookup as TypedMap<string, string>;
+  }
+
   static network(network: string): TypedMap<string, string> {
     let mapping = new TypedMap<string, string>();
     if (network == "mainnet") {
@@ -353,6 +361,8 @@ export class constantAddresses {
       mapping = this.bartio();
     } else if (network == "worldchain") {
       mapping = this.worldchain();
+    } else if (network == "apechain-mainnet") {
+      mapping = this.apechain();
     }
 
     return mapping as TypedMap<string, string>;

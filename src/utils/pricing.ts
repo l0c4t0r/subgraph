@@ -20,7 +20,8 @@ function getUsdcDecimalFactor(): BigInt {
     dataSource.network() == "opbnb-mainnet" ||
     dataSource.network() == "blast-mainnet" ||
     dataSource.network() == "rootstock" ||
-    dataSource.network() == "berachain-bartio"
+    dataSource.network() == "berachain-bartio" ||
+    dataSource.network() == "apechain-mainnet"
   ) {
     return BigInt.fromString("1000000000000000000");
   }

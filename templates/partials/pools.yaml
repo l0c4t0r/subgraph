@@ -1,11 +1,11 @@
 - name: Pool
   file: ./abis/{{poolAbiName}}.json
 - name: AlgebraV1Pool
-  file: ./abis/AlgebraFinance/V1Pool.json
+  file: ./abis/AlgebraV1Pool.json
 - name: AlgebraV2Pool
-  file: ./abis/AlgebraFinance/V2Pool.json
+  file: ./abis/AlgebraV2Pool.json
 - name: AlgebraIntegralPool
-  file: ./abis/AlgebraFinance/IntegralPool.json
+  file: ./abis/AlgebraIntegralPool.json
 - name: UniswapV3Pool
   file: ./abis/UniswapV3Pool.json
 - name: FusionxPool

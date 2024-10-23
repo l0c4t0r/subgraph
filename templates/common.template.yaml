@@ -24,7 +24,7 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.7
       language: wasm/assemblyscript
-      file: ./src/mappings/uniswapV3/hypervisor.ts
+      file: ./src/mappings/{{poolHandler}}/hypervisor.ts
       entities:
         - Account
         - UniswapV3Hypervisor
@@ -71,7 +71,7 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.7
       language: wasm/assemblyscript
-      file: ./src/mappings/uniswapV3/pool.ts
+      file: ./src/mappings/{{poolHandler}}/pool.ts
       entities:
         - UniswapV3Hypervisor
         - UniswapV3HypervisorDayData
@@ -100,7 +100,7 @@ dataSources:
       kind: ethereum/events
       apiVersion: 0.0.7
       language: wasm/assemblyscript
-      file: ./src/mappings/uniswapV3/hypeRegistry.ts
+      file: ./src/mappings/{{poolHandler}}/hypeRegistry.ts
       entities:
         - UniswapV3Hypervisor
         - UniswapV3HypervisorDayData
@@ -250,7 +250,7 @@ templates:
       kind: ethereum/events
       apiVersion: 0.0.7
       language: wasm/assemblyscript
-      file: ./src/mappings/uniswapV3/hypervisor.ts
+      file: ./src/mappings/{{poolHandler}}/hypervisor.ts
       entities:
         - Account
         - UniswapV3Hypervisor
@@ -414,7 +414,7 @@ templates:
         - name: MasterChefV2Rewarder
           file: ./abis/MasterChefV2Rewarder.json
         - name: Hypervisor
-          file: ./abis/AlgebraFinance/Hypervisor.json
+          file: ./abis/AlgebraHypervisor.json
         - name: Pool
           file: ./abis/{{poolAbiName}}.json
         {{> hypervisors.yaml}}
@@ -460,7 +460,7 @@ templates:
         - name: MasterChefV2Rewarder
           file: ./abis/MasterChefV2Rewarder.json
         - name: Hypervisor
-          file: ./abis/AlgebraFinance/Hypervisor.json
+          file: ./abis/AlgebraHypervisor.json
         - name: Pool
           file: ./abis/{{poolAbiName}}.json
         {{> hypervisors.yaml}}

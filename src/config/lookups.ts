@@ -296,3 +296,7 @@ protocolLookup.set("worldchain:0xc27ddd78fc49875fe6f844b72bbf31dfbb099881", {
   name: "uniswap",
   underlyingProtocol: PROTOCOL_UNISWAP_V3,
 });
+protocolLookup.set("apechain-mainnet:0xc27ddd78fc49875fe6f844b72bbf31dfbb099881", {
+  name: "camelot",
+  underlyingProtocol: PROTOCOL_ALGEBRA_V2,
+});

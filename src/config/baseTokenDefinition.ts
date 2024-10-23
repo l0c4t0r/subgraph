@@ -1486,6 +1486,20 @@ export class BaseTokenDefinition {
     return lookup as TypedMap<string, BasePool>;
   }
 
+  static apechain(): TypedMap<string, BasePool> {
+    const APE_USD = "0xa2235d059f80e176d931ef76b6c51953eb3fbef4";
+
+    let lookup = new TypedMap<string, BasePool>();
+    lookup.set(APE_USD, {
+      pathIdx: [-1],
+      path: [ADDRESS_ZERO],
+      pathStartBlock: [0],
+      priority: 1,
+    });
+
+    return lookup as TypedMap<string, BasePool>;
+  }
+
   static nonBase(): BasePool {
     let lookup: BasePool = {
       path: [ADDRESS_ZERO],
@@ -1564,6 +1578,8 @@ export class BaseTokenDefinition {
       mapping = this.bartio();
     } else if (network == "worldchain") {
       mapping = this.worldchain();
+    } else if (network == "apechain-mainnet") {
+      mapping = this.apechain();
     }
 
     return mapping as TypedMap<string, BasePool>;

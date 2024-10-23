@@ -1,4 +1,4 @@
 - name: UniswapV3Hypervisor
   file: ./abis/UniswapV3Hypervisor.json
 - name: AlgebraHypervisor
-  file: ./abis/AlgebraFinance/Hypervisor.json
+  file: ./abis/AlgebraHypervisor.json

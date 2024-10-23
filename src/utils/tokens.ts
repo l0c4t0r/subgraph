@@ -160,6 +160,7 @@ export function isUSDC(tokenAddress: Address): boolean {
   const usdtRootstock = addressLookup.get("RUSDT")
   const usdtIota = addressLookup.get("USDT")
   const honeyBartio = addressLookup.get("HONEY");
+  const apeUsd = addressLookup.get("APE_USD")
 
   if (usdcAddress) {
     if (tokenAddress == Address.fromString(usdcAddress)) {
@@ -211,6 +212,12 @@ export function isUSDC(tokenAddress: Address): boolean {
 
   if (honeyBartio) {
     if (tokenAddress == Address.fromString(honeyBartio)) {
+      return true;
+    }
+  }
+
+  if (apeUsd) {
+    if (tokenAddress == Address.fromString(apeUsd)) {
       return true;
     }
   }
