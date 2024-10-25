@@ -1,16 +1,16 @@
 {
-  "network": "apechain-mainnet",
+  "network": "48900",
   "subgraphTemplate": "common",
   "hypeAbiName": "AlgebraHypervisor",
   "poolAbiName": "AlgebraV1Pool",
   "poolHandler": "algebraFinanceV1",
-  "deploymentService": "goldsky",
-  "deploymentName": "gamma-camelot-apechain",
+  "deploymentService": "sentio",
+  "deploymentName": "gamma-ocelex-zircuit",
   "hypeRegistry": [
     {
       "name": "HypeRegistry",
-      "address": "0xC27DDd78FC49875Fe6F844B72bbf31DFBB099881",
-      "startBlock": 476343
+      "address": "0x17307DaC1384719d263556aAcC3e62c0053FE25D",
+      "startBlock": 4826564
     }
   ]
 }

@@ -298,5 +298,9 @@ protocolLookup.set("worldchain:0xc27ddd78fc49875fe6f844b72bbf31dfbb099881", {
 });
 protocolLookup.set("apechain-mainnet:0xc27ddd78fc49875fe6f844b72bbf31dfbb099881", {
   name: "camelot",
-  underlyingProtocol: PROTOCOL_ALGEBRA_V2,
+  underlyingProtocol: PROTOCOL_ALGEBRA_V1,
+});
+protocolLookup.set("48900:0x17307dac1384719d263556aacc3e62c0053fe25d", {
+  name: "ocelex",
+  underlyingProtocol: PROTOCOL_ALGEBRA_V1,
 });
